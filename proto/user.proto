@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "proto/;";
+
+service UserService {
+  rpc GetUserByID(UserIDRequest) returns (UserResponse);
+  rpc GetUsersByIDs(UserIDsRequest) returns (UsersResponse);
+  rpc SearchUsers(SearchRequest) returns (SearchResponse);
+}
+
+message User {
+  int32 id = 1;
+  string fname = 2;
+  string city = 3;
+  int64 phone = 4;
+  float height = 5;
+  bool married = 6;
+}
+
+message UserIDRequest {
+  int32 id = 1;
+}
+
+message UserIDsRequest {
+  repeated int32 ids = 1;
+}
+
+message UserResponse {
+  User user = 1;
+}
+
+message UsersResponse {
+  repeated User users = 1;
+}
+
+message SearchRequest {
+  string fname = 1;
+  string city = 2;
+  int64 phone = 3;
+  float height = 4;
+  bool married = 5;
+}
+
+message SearchResponse {
+  repeated User users = 1;
+}
