@@ -24,7 +24,7 @@ This is a Golang-based gRPC service that provides functionalities for managing u
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/Nikita031/grpc-user-service.git
+    git clone https://github.com/Nikita031/gRPC-user-service.git
     cd grpc-user-service
     ```
 
